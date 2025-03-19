@@ -1,0 +1,101 @@
+.chat-content {
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 85vh;
+  
+    .block-title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+  
+      .title {
+        font-weight: 400;
+        margin-bottom: 15px;
+      }
+    }
+  
+    .list-message-reponse {
+      display: flex;
+      flex-direction: column;
+      width: 50vw;
+      height: 45vh;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 20px;
+  
+      .message-send {
+        margin-bottom: 15px;
+        padding: 15px;
+        background: rgba(227, 221, 221, 0.329);
+        border-radius: 35px;
+        width: max-content;
+        align-self: flex-end;  // Aligne les messages envoyés à droite
+        margin-left: auto;      // Ajoute de l'espace à gauche du message envoyé
+        margin-right: 0;       // Colle le message envoyé à droite
+      }
+  
+      .reponse-message {
+        margin-bottom: 35px;
+        padding: 15px;
+        background: rgba(227, 221, 221, 0.329);
+        border-radius: 35px;
+        margin-right: auto;     // Aligne les réponses à gauche
+        margin-left: 0;         // Colle la réponse à gauche
+      }
+  
+      &.scrollable {
+        max-height: 75vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+  
+        &::-webkit-scrollbar {
+          width: 8px;
+        }
+  
+        &::-webkit-scrollbar-thumb {
+          background-color: rgba(0, 0, 0, 0.2);
+        }
+  
+        &::-webkit-scrollbar-track {
+          background-color: transparent;
+        }
+      }
+    }
+  
+    .message-input {
+      position: relative;
+  
+      .message {
+        width: 650px;
+        height: 75px;
+        padding: 25px;
+        border: 1px solid rgb(185, 174, 174);
+        border-radius: 25px;
+        outline: none;
+        font-size: 1rem;
+        font-weight: 400;
+      }
+  
+      .icon-send {
+        font-size: 1.5rem;
+        position: absolute;
+        bottom: 20px;
+        right: 30px;
+        color: rgb(88, 87, 87);
+        transition: 0.5s ease;
+        cursor: pointer;
+  
+        &:hover {
+          color: black;
+          transition: 0.5s ease;
+        }
+      }
+    }
+  }
+  

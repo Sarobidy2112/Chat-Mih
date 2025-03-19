@@ -1,0 +1,89 @@
+.chat-content {
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 85vh;
+}
+.chat-content .block-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.chat-content .block-title .title {
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+.chat-content .list-message-reponse {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  height: 45vh;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.chat-content .list-message-reponse .message-send {
+  margin-bottom: 15px;
+  padding: 15px;
+  background: rgba(227, 221, 221, 0.329);
+  border-radius: 35px;
+  width: max-content;
+  align-self: flex-end;
+  margin-left: auto;
+  margin-right: 0;
+}
+.chat-content .list-message-reponse .reponse-message {
+  margin-bottom: 35px;
+  padding: 15px;
+  background: rgba(227, 221, 221, 0.329);
+  border-radius: 35px;
+  margin-right: auto;
+  margin-left: 0;
+}
+.chat-content .list-message-reponse.scrollable {
+  max-height: 75vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+}
+.chat-content .list-message-reponse.scrollable::-webkit-scrollbar {
+  width: 8px;
+}
+.chat-content .list-message-reponse.scrollable::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.chat-content .list-message-reponse.scrollable::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.chat-content .message-input {
+  position: relative;
+}
+.chat-content .message-input .message {
+  width: 650px;
+  height: 75px;
+  padding: 25px;
+  border: 1px solid rgb(185, 174, 174);
+  border-radius: 25px;
+  outline: none;
+  font-size: 1rem;
+  font-weight: 400;
+}
+.chat-content .message-input .icon-send {
+  font-size: 1.5rem;
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  color: rgb(88, 87, 87);
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+.chat-content .message-input .icon-send:hover {
+  color: black;
+  transition: 0.5s ease;
+}
+
+/*# sourceMappingURL=style.css.map */
