@@ -21,7 +21,7 @@
     .list-message-reponse {
       display: flex;
       flex-direction: column;
-      width: 50vw;
+      width: 60vw;
       height: 45vh;
       position: relative;
       overflow: hidden;
@@ -41,10 +41,91 @@
       .reponse-message {
         margin-bottom: 35px;
         padding: 15px;
-        background: rgba(227, 221, 221, 0.329);
+        // background: rgba(227, 221, 221, 0.329);s
         border-radius: 35px;
         margin-right: auto;     // Aligne les réponses à gauche
         margin-left: 0;         // Colle la réponse à gauche
+
+        h1,h2,h3,h4,h5,h6,p,ul:first-child {
+          margin-bottom: 10px;
+          code{
+            color: black;
+            font-weight: 600;
+          }
+        }
+
+        h1{
+          font-size: 1.8rem;
+          strong{
+            font-weight: bolder
+          }
+        }
+
+        h2{
+          list-style: upper-alpha;
+          margin-left: 30px;
+        }
+
+        h3{
+          margin-left: 30px;
+        }
+
+        ul:first-child{
+          margin-left: 35px;
+          li{
+            list-style: square;
+            margin-bottom: 5px;
+          }
+        }
+
+        p{
+          margin-bottom: 10px;
+          font-weight: 400;
+          strong{
+            font-weight: 700;
+
+          }
+        }
+
+        ol{
+          margin-left: 30px;
+          margin-bottom: 10px;
+          li{
+            list-style: square;
+            code{
+              color: black;
+              font-weight: 600;
+            }
+          }
+        }
+        pre{
+          margin: 35px 0;
+          code{
+            color: white;
+            font-family: revert;
+
+            .token.keyword {
+              color: #ff79c6; /* Couleur des mots-clés (comme def) */
+            }
+            
+            .token.function {
+              color: #50fa7b; /* Couleur des fonctions */
+            }
+            
+            .token.comment {
+              color: #6272a4; /* Couleur des commentaires */
+            }
+            
+            .token.string {
+              color: #f1fa8c; /* Couleur des chaînes de caractères */
+            }
+            
+            .token.number {
+              color: #bd93f9; /* Couleur des numéros */
+            }
+
+          }
+        }
       }
 
       .loading-indicator {

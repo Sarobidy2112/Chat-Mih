@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .chat-content {
   padding: 15px;
   display: flex;
@@ -19,7 +20,7 @@
 .chat-content .list-message-reponse {
   display: flex;
   flex-direction: column;
-  width: 50vw;
+  width: 60vw;
   height: 45vh;
   position: relative;
   overflow: hidden;
@@ -38,10 +39,76 @@
 .chat-content .list-message-reponse .reponse-message {
   margin-bottom: 35px;
   padding: 15px;
-  background: rgba(227, 221, 221, 0.329);
   border-radius: 35px;
   margin-right: auto;
   margin-left: 0;
+}
+.chat-content .list-message-reponse .reponse-message h1, .chat-content .list-message-reponse .reponse-message h2, .chat-content .list-message-reponse .reponse-message h3, .chat-content .list-message-reponse .reponse-message h4, .chat-content .list-message-reponse .reponse-message h5, .chat-content .list-message-reponse .reponse-message h6, .chat-content .list-message-reponse .reponse-message p, .chat-content .list-message-reponse .reponse-message ul:first-child {
+  margin-bottom: 10px;
+}
+.chat-content .list-message-reponse .reponse-message h1 code, .chat-content .list-message-reponse .reponse-message h2 code, .chat-content .list-message-reponse .reponse-message h3 code, .chat-content .list-message-reponse .reponse-message h4 code, .chat-content .list-message-reponse .reponse-message h5 code, .chat-content .list-message-reponse .reponse-message h6 code, .chat-content .list-message-reponse .reponse-message p code, .chat-content .list-message-reponse .reponse-message ul:first-child code {
+  color: black;
+  font-weight: 600;
+}
+.chat-content .list-message-reponse .reponse-message h1 {
+  font-size: 1.8rem;
+}
+.chat-content .list-message-reponse .reponse-message h1 strong {
+  font-weight: bolder;
+}
+.chat-content .list-message-reponse .reponse-message h2 {
+  list-style: upper-alpha;
+  margin-left: 30px;
+}
+.chat-content .list-message-reponse .reponse-message h3 {
+  margin-left: 30px;
+}
+.chat-content .list-message-reponse .reponse-message ul:first-child {
+  margin-left: 35px;
+}
+.chat-content .list-message-reponse .reponse-message ul:first-child li {
+  list-style: square;
+  margin-bottom: 5px;
+}
+.chat-content .list-message-reponse .reponse-message p {
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+.chat-content .list-message-reponse .reponse-message p strong {
+  font-weight: 700;
+}
+.chat-content .list-message-reponse .reponse-message ol {
+  margin-left: 30px;
+  margin-bottom: 10px;
+}
+.chat-content .list-message-reponse .reponse-message ol li {
+  list-style: square;
+}
+.chat-content .list-message-reponse .reponse-message ol li code {
+  color: black;
+  font-weight: 600;
+}
+.chat-content .list-message-reponse .reponse-message pre {
+  margin: 35px 0;
+}
+.chat-content .list-message-reponse .reponse-message pre code {
+  color: white;
+  font-family: revert;
+}
+.chat-content .list-message-reponse .reponse-message pre code .token.keyword {
+  color: #ff79c6; /* Couleur des mots-clés (comme def) */
+}
+.chat-content .list-message-reponse .reponse-message pre code .token.function {
+  color: #50fa7b; /* Couleur des fonctions */
+}
+.chat-content .list-message-reponse .reponse-message pre code .token.comment {
+  color: #6272a4; /* Couleur des commentaires */
+}
+.chat-content .list-message-reponse .reponse-message pre code .token.string {
+  color: #f1fa8c; /* Couleur des chaînes de caractères */
+}
+.chat-content .list-message-reponse .reponse-message pre code .token.number {
+  color: #bd93f9; /* Couleur des numéros */
 }
 .chat-content .list-message-reponse .loading-indicator {
   display: flex;

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./style.css";
 
-const Navbar = () => {
-  const [selectedOption, setSelectedOption] = useState("");
+const Navbar = ({ onSelect }) => {
+  const [selectedOption, setSelectedOption] = useState("Texte"); // Par défaut, "Texte" est sélectionné
 
   const handleSelectClick = () => {
     document.querySelector(".select-container").classList.toggle("active");
@@ -10,6 +10,7 @@ const Navbar = () => {
 
   const handleOptionClick = (option) => {
     setSelectedOption(option);
+    onSelect(option); // Transmettre la valeur sélectionnée au parent
     document.querySelector(".select-container").classList.remove("active");
   };
 
@@ -25,6 +26,7 @@ const Navbar = () => {
             readOnly
           />
         </div>
+        
         <div className="option-container">
           {["Texte", "Raisonnement", "Vision"].map((option, index) => (
             <div

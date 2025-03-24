@@ -1,12 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import "prismjs/themes/prism-okaidia.css"; /* Thème sombre */
+@import "prismjs/themes/prism.css"; /* Thème clair */
+
 
 *{
-    font-family: "Roboto", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 300;
-    font-style: normal;
-    font-variation-settings:
-      "wdth" 100;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -21,4 +21,39 @@
 .pages{
   width: 100vw;
   height: 100vh;
+}
+
+/* Personnalisation de l'apparence du code dans le chat */
+pre {
+  background-color: #282c34; /* Couleur de fond */
+  padding: 15px; /* Espacement autour du code */
+  border-radius: 5px; /* Coins arrondis */
+  overflow-x: auto; /* Permet un défilement horizontal si nécessaire */
+}
+
+code {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  color: #f8f8f2; /* Couleur de texte pour le code */
+}
+
+.language-python .token.keyword {
+  color: #ff79c6; /* Couleur des mots-clés (comme def) */
+}
+
+.language-python .token.function {
+  color: #50fa7b; /* Couleur des fonctions */
+}
+
+.language-python .token.comment {
+  color: #6272a4; /* Couleur des commentaires */
+}
+
+.language-python .token.string {
+  color: #f1fa8c; /* Couleur des chaînes de caractères */
+}
+
+.language-python .token.number {
+  color: #bd93f9; /* Couleur des numéros */
 }
