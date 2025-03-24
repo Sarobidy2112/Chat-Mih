@@ -43,6 +43,15 @@
   margin-right: auto;
   margin-left: 0;
 }
+.chat-content .list-message-reponse .loading-indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  font-style: italic;
+  color: #888;
+  margin: 20px 0;
+}
 .chat-content .list-message-reponse.scrollable {
   max-height: 75vh;
   overflow-y: auto;

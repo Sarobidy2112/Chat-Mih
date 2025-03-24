@@ -1,54 +1,61 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './style.css';
 
 const Chat = () => {
-  // États pour gérer les messages et les réponses
+  // États pour gérer les messages, l'entrée utilisateur, la longueur et le chargement
   const [messages, setMessages] = useState([]);
   const [inputMessage, setInputMessage] = useState('');
   const [longueur, setLongueur] = useState(0);
-
-  // Fonction pour générer un mot aléatoire
-  function genererMotAleatoire(longueur) {
-    const lettres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    let mot = '';
-    for (let i = 0; i < longueur; i++) {
-      mot += lettres.charAt(Math.floor(Math.random() * lettres.length));
-    }
-    return mot;
-  }
+  const [isLoading, setIsLoading] = useState(false);
 
   // Fonction pour afficher les messages
-  function afficherMessages() {
+  const afficherMessages = () => {
     const blockTitle = document.querySelector('.block-title');
     const listMessageReponse = document.querySelector('.list-message-reponse');
-    
     if (messages.length === 0) {
       blockTitle.style.display = 'flex'; // Afficher le titre
       listMessageReponse.innerHTML = ''; // Effacer les anciens messages
     } else {
       blockTitle.style.display = 'none'; // Cacher le titre
     }
-  }
+  };
 
   // Fonction pour ajouter un message
-  function ajouterMessage() {
-    if (inputMessage.trim() !== '') {
-      const newMessage = inputMessage;
-      const newResponse = genererMotAleatoire(10);
+  const ajouterMessage = async () => {
+    if (inputMessage.trim() === '') return;
 
-      // Mettre à jour l'état des messages et réponses
-      setMessages((prevMessages) => [
-        ...prevMessages,
-        { message: newMessage, response: newResponse },
-      ]);
+    setIsLoading(true); // Activer l'indicateur de chargement
 
-      setLongueur(longueur + 1);
-      setInputMessage(''); // Vider le champ de saisie après envoi
+    try {
+      const response = await fetch('http://localhost:3030/api/chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ userMessage: inputMessage }),
+      });
+
+      const data = await response.json();
+
+      if (data.response) {
+        setMessages((prevMessages) => [
+          ...prevMessages,
+          { message: inputMessage, response: data.response },
+        ]);
+        setLongueur((prevLongueur) => prevLongueur + 1);
+        setInputMessage('');
+      } else {
+        console.error('Réponse invalide de l\'API:', data);
+      }
+    } catch (error) {
+      console.error('Erreur lors de l\'envoi du message:', error);
+    } finally {
+      setIsLoading(false); // Désactiver l'indicateur de chargement
     }
-  }
+  };
 
   // Affichage des messages
-  React.useEffect(() => {
+  useEffect(() => {
     afficherMessages();
   }, [messages]);
 
@@ -70,6 +77,11 @@ const Chat = () => {
             </div>
           </div>
         ))}
+        {isLoading && (
+          <div className="loading-indicator">
+            <p>Loading...</p>
+          </div>
+        )}
       </div>
 
       <div className="message-input">
@@ -90,6 +102,6 @@ const Chat = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Chat;

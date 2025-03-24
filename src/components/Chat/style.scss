@@ -46,6 +46,16 @@
         margin-right: auto;     // Aligne les réponses à gauche
         margin-left: 0;         // Colle la réponse à gauche
       }
+
+      .loading-indicator {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        font-style: italic;
+        color: #888;
+        margin: 20px 0;
+      }
   
       &.scrollable {
         max-height: 75vh;
